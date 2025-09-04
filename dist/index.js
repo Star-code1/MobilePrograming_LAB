@@ -1,267 +1,122 @@
 "use strict";
-// // LAB1
-// import {
-//     Person, Student, Car, Rectangle, BankAccount, Book, User, Product,
-//     Animal, Account, BaseAnimal, Dog, Cat, Flyable, Swimmable, Bird, Fish,
-//     Shape, Square, Circle, Employee, Manager, Developer, Library,
-//     Box, Logger, MathUtil, PolyAnimal, PolyDog, PolyCat, Vehicle,
-//     VehicleCar, Bike, Repository, Stack, Payment, CashPayment, CardPayment,
-//     Appliance, Fan, AirConditioner, StaticShape, Order, Teacher,
-//     ProtectedAnimal, ProtectedDog, ProtectedCat, Movable, MovableCar, Robot, School
-// } from "./LAB1";
 Object.defineProperty(exports, "__esModule", { value: true });
-// //Bai1
-// console.log('Bai1');
-// var person = new Person('Huy',20);
-// person.display();
-// //Bai2
-// console.log('Bai2');
-// var student = new Student('Huy',20,12);
-// student.display();
-// //Bai3
-// console.log('Bai3');
-// var car = new Car('Audi','Audi1',2000);
-// car.display();
-// //Bai4
-// console.log('Bai4');
-// var rectangle = new Rectangle(5,2)
-// rectangle.area();
-// rectangle.perimeter();
-// //Bai5
-// console.log('Bai5');
-// var bankAccount = new BankAccount(2000)
-// bankAccount.deposit(200);
-// bankAccount.withdraw(50);
-// //Bai6
-// console.log('Bai6');
-// var book = new Book('Xin chao','Huy',2012)
-// book.display()
-// //Bai7
-// console.log('Bai7');
-// var user = new User('Huy');
-// console.log(`Ten la ${user.getName}`);
-// user.setName='Nguyen Thanh Huy';
-// console.log(`Ten la ${user.getName}`);
-// //Bai8
-// console.log('Bai8');
-// const products = [
-//     new Product('Product1', 50),
-//     new Product('Product2', 150),
-//     new Product('Product3', 200)
-// ];
-// const expensiveProducts = products.filter(p => p.price > 100);
-// console.log('Products > 100:', expensiveProducts);
-// //Bai9
-// console.log('Bai9');
-// class DogAnimal implements Animal {
-//     name: string = 'Dog';
-//     sound(): void {
-//         console.log('Gâu!');
-//     }
-// }
-// const animal: Animal = new DogAnimal();
-// animal.sound();
-// //Bai10
-// console.log('Bai10');
-// const account = new Account('publicValue', 'privateValue', 'readonlyValue');
-// account.display();
-// //Bai11
-// console.log('Bai11');
-// const dog = new Dog('Chó');
-// dog.bark();
-// const cat = new Cat('Mèo');
-// cat.meow();
-// //Bai12
-// console.log('Bai12');
-// const bird = new Bird();
-// bird.fly();
-// const fish = new Fish();
-// fish.swim();
-// //Bai13
-// console.log('Bai13');
-// const square: Shape = new Square(5);
-// console.log('Square area:', square.area());
-// const circle: Shape = new Circle(3);
-// console.log('Circle area:', circle.area());
-// //Bai14
-// console.log('Bai14');
-// const manager = new Manager('A');
-// manager.manage();
-// const developer = new Developer('B');
-// developer.develop();
-// //Bai15
-// console.log('Bai15');
-// const library = new Library();
-// library.addBook(new Book('Book1', 'Author1', 2020));
-// library.display();
-// //Bai16
-// console.log('Bai16');
-// const stringBox = new Box<string>('Hello');
-// console.log(stringBox.getValue());
-// const numberBox = new Box<number>(42);
-// console.log(numberBox.getValue());
-// //Bai17
-// console.log('Bai17');
-// const logger = Logger.getInstance();
-// logger.log('This is a log message.');
-// //Bai18
-// console.log('Bai18');
-// console.log('Add:', MathUtil.add(5, 3));
-// console.log('Subtract:', MathUtil.subtract(5, 3));
-// console.log('Multiply:', MathUtil.multiply(5, 3));
-// console.log('Divide:', MathUtil.divide(5, 3));
-// //Bai19
-// console.log('Bai19');
-// const polyAnimals: PolyAnimal[] = [new PolyDog(), new PolyCat()];
-// polyAnimals.forEach(a => a.makeSound());
-// //Bai20
-// console.log('Bai20');
-// const vehicleCar: Vehicle = new VehicleCar();
-// vehicleCar.drive();
-// const bike: Vehicle = new Bike();
-// bike.drive();
-// //Bai21
-// console.log('Bai21');
-// const repo = new Repository<string>();
-// repo.add('Item1');
-// repo.add('Item2');
-// console.log(repo.getAll());
-// //Bai22
-// console.log('Bai22');
-// const stack = new Stack<number>();
-// stack.push(1);
-// stack.push(2);
-// console.log('Peek:', stack.peek());
-// console.log('Pop:', stack.pop());
-// console.log('Is Empty:', stack.isEmpty());
-// //Bai23
-// console.log('Bai23');
-// const cash: Payment = new CashPayment();
-// cash.pay(100);
-// const card: Payment = new CardPayment();
-// card.pay(200);
-// //Bai24
-// console.log('Bai24');
-// const fan: Appliance = new Fan();
-// fan.turnOn();
-// const ac: Appliance = new AirConditioner();
-// ac.turnOn();
-// //Bai25
-// console.log('Bai25');
-// StaticShape.describe();
-// //Bai26
-// console.log('Bai26');
-// const order = new Order();
-// order.addProduct(new Product('Prod1', 50));
-// order.addProduct(new Product('Prod2', 150));
-// console.log('Total:', order.calculateTotal());
-// //Bai27
-// console.log('Bai27');
-// const teacher = new Teacher('C', 35, 'Toán');
-// teacher.introduce();
-// //Bai28
-// console.log('Bai28');
-// const protDog = new ProtectedDog();
-// protDog.makeSound();
-// const protCat = new ProtectedCat();
-// protCat.makeSound();
-// //Bai29
-// console.log('Bai29');
-// const movableCar: Movable = new MovableCar();
-// movableCar.move();
-// const robot: Movable = new Robot();
-// robot.move();
-// //Bai30
-// console.log('Bai30');
-// const school = new School();
-// school.addStudent(new Student('Student1', 15, 10));
-// school.addTeacher(new Teacher('Teacher1', 40, 'Văn'));
-// school.display();
-//LAB2
 const LAB2_1 = require("./LAB2");
-//Bai1
-LAB2_1.myPromise.then((result) => {
+async function main() {
+    // //LAB1
+    // console.log('Bài 1'); new Person('Huy',20).display();
+    // console.log('Bài 2'); new Student('Huy',20,12).display();
+    // console.log('Bài 3'); new Car('Audi','Audi1',2000).display();
+    // console.log('Bài 4'); new Rectangle(5,2).area(); new Rectangle(5,2).perimeter();
+    // console.log('Bài 5'); let acc = new BankAccount(2000); acc.deposit(200); acc.withdraw(50);
+    // console.log('Bài 6'); new Book('Xin chao','Huy',2012).display();
+    // console.log('Bài 7'); let user = new User('Huy'); console.log(user.getName); user.setName = 'Nguyen Thanh Huy'; console.log(user.getName);
+    // console.log('Bài 8'); console.log([new Product('P1',50),new Product('P2',150),new Product('P3',200)].filter(p=>p.price>100));
+    // console.log('Bài 9'); new Dog('Dog').bark();
+    // console.log('Bài 10'); new Account('pub','priv','ro').display();
+    // console.log('Bài 11'); new Dog('Chó').bark(); new Cat('Mèo').meow();
+    // console.log('Bài 12'); new Bird().fly(); new Fish().swim();
+    // console.log('Bài 13'); console.log('Square:', new Square(5).area()); console.log('Circle:', new Circle(3).area());
+    // console.log('Bài 14'); new Manager('A').manage(); new Developer('B').develop();
+    // console.log('Bài 15'); let lib = new Library(); lib.addBook(new Book('Book1','Author1',2020)); lib.display();
+    // console.log('Bài 16'); console.log(new Box<string>('Hello').getValue(), new Box<number>(42).getValue());
+    // console.log('Bài 17'); Logger.getInstance().log('Singleton logger message');
+    // console.log('Bài 18'); console.log(MathUtil.add(5,3), MathUtil.subtract(5,3), MathUtil.multiply(5,3), MathUtil.divide(5,3));
+    // console.log('Bài 19'); [new PolyDog(), new PolyCat()].forEach(a=>a.makeSound());
+    // console.log('Bài 20'); new VehicleCar().drive(); new Bike().drive();
+    // console.log('Bài 21'); let repo = new Repository<string>(); repo.add('Item1'); repo.add('Item2'); console.log(repo.getAll());
+    // console.log('Bài 22'); let st = new Stack<number>(); st.push(1); st.push(2); console.log(st.peek(), st.pop(), st.isEmpty());
+    // console.log('Bài 23'); new CashPayment().pay(100); new CardPayment().pay(200);
+    // console.log('Bài 24'); new Fan().turnOn(); new AirConditioner().turnOn();
+    // console.log('Bài 25'); StaticShape.describe();
+    // console.log('Bài 26'); let order = new Order(); order.addProduct(new Product('P1',50)); order.addProduct(new Product('P2',150)); console.log(order.calculateTotal());
+    // console.log('Bài 27'); new Teacher('C',35,'Toán').introduce();
+    // console.log('Bài 28'); new ProtectedDog().makeSound(); new ProtectedCat().makeSound();
+    // console.log('Bài 29'); new MovableCar().move(); new Robot().move();
+    // console.log('Bài 30'); let school = new School(); school.addStudent(new Student('S1',15,10)); school.addTeacher(new Teacher('T1',40,'Văn')); school.display();
+    //LAB2
+    //A. Basics with Promise
     console.log('Bài 1');
-    console.log(result);
-});
-//Bai2
-(0, LAB2_1.getNumber)().then((result) => {
+    console.log(await LAB2_1.myPromise);
     console.log('Bài 2');
-    console.log(result);
-});
-//Bai3
-(0, LAB2_1.getError)().catch((error) => {
+    console.log(await (0, LAB2_1.getNumber)());
     console.log('Bài 3');
-    console.log(error);
-});
-//Bai4
-(0, LAB2_1.randNum)()
-    .then((value) => {
+    try {
+        await (0, LAB2_1.getError)();
+    }
+    catch (e) {
+        console.log(e);
+    }
     console.log('Bài 4');
-    console.log('Resolve with value: ' + value);
-})
-    .catch((error) => {
-    console.log('Bài 4');
-    console.log('Reject with error: ' + error);
-});
-//Bai5
-(0, LAB2_1.simulateTask)(2000).then((result) => {
+    try {
+        console.log(await (0, LAB2_1.randNum)());
+    }
+    catch (e) {
+        console.log(e);
+    }
     console.log('Bài 5');
-    console.log(result);
-});
-//Bai6
-Promise.all([
-    (0, LAB2_1.simulateTask)(1000).then((result) => {
-        console.log('Bài 6');
-        console.log(result);
-    }),
-    (0, LAB2_1.randNum)()
-        .then((value) => {
-        console.log('Bài 6');
-        console.log('Resolve with value: ' + value);
-    })
-        .catch((error) => {
-        console.log('Bài 6');
-        console.log('Reject with error: ' + error);
-    }),
-    (0, LAB2_1.getError)().catch((error) => {
-        console.log('Bài 6');
-        console.log(error);
-    })
-]);
-//Bai7
-Promise.race([
-    (0, LAB2_1.simulateTask)(1000),
-    (0, LAB2_1.randNum)(),
-    (0, LAB2_1.getNumber)()
-]).then((result) => {
+    console.log(await (0, LAB2_1.simulateTask)(2000));
+    console.log('Bài 6');
+    await Promise.all([(0, LAB2_1.simulateTask)(1000), (0, LAB2_1.randNum)().catch(e => e), (0, LAB2_1.getError)().catch(e => e)]).then(r => console.log(r));
     console.log('Bài 7');
-    console.log(result);
-});
-//Bai8
-Promise.resolve(2)
-    .then(value => {
-    return value * value;
-})
-    .then(value => {
-    return value * 2;
-})
-    .then(value => {
-    return value + 5;
-})
-    .then(value => {
+    console.log(await Promise.race([(0, LAB2_1.simulateTask)(1000), (0, LAB2_1.randNum)(), (0, LAB2_1.getNumber)()]));
     console.log('Bài 8');
-    console.log(value);
-});
-//Bai9
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-(0, LAB2_1.evenNumber)(arr).then((result) => {
+    let val = await Promise.resolve(2).then(v => v * v).then(v => v * 2).then(v => v + 5);
+    console.log(val);
     console.log('Bài 9');
-    console.log(result);
-});
-//Bai 10
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-(0, LAB2_1.evenNumber)(arr).finally(() => {
+    console.log(await (0, LAB2_1.evenNumber)([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
     console.log('Bài 10');
-    console.log('Done');
-});
+    await (0, LAB2_1.evenNumber)([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).finally(() => console.log("Done"));
+    //B. Async/Await
+    console.log('Bài 11');
+    console.log(await (0, LAB2_1.myAsyncFunction)());
+    console.log('Bài 12');
+    await (0, LAB2_1.asyncSimulateTask)();
+    console.log('Bài 13');
+    await (0, LAB2_1.asyncTryCatch)();
+    console.log('Bài 14');
+    console.log(await (0, LAB2_1.async3times)(5));
+    console.log('Bài 15');
+    await (0, LAB2_1.asyncSequentially)();
+    console.log('Bài 16');
+    await (0, LAB2_1.asyncAllPromises)();
+    console.log('Bài 17');
+    await (0, LAB2_1.asyncForOf)();
+    console.log('Bài 18');
+    console.log(await (0, LAB2_1.fetchUser)(1));
+    console.log('Bài 19');
+    console.log(await (0, LAB2_1.fetchUsers)([1, 2, 3]));
+    console.log('Bài 20');
+    try {
+        console.log(await (0, LAB2_1.fetchWithTimeout)(1, 1000));
+    }
+    catch (e) {
+        console.log(e);
+    }
+    //C. Fetch API & Simulated I/O 
+    console.log('Bài 21');
+    await (0, LAB2_1.dataFromPublicAPI)();
+    console.log('Bài 22');
+    await (0, LAB2_1.callMultipleAPI)();
+    console.log('Bài 23');
+    await (0, LAB2_1.callCompletedTodosAPI)();
+    console.log('Bài 24');
+    await (0, LAB2_1.postData)();
+    console.log('Bài 25');
+    await (0, LAB2_1.downloadFile)("myfile.txt");
+    console.log('Bài 26');
+    await (0, LAB2_1.wait5Seconds)();
+    console.log('Bài 27');
+    try {
+        console.log(await (0, LAB2_1.fetchWithRetry)("https://jsonplaceholder.typicode.com/todos/1", 3));
+    }
+    catch (e) {
+        console.log(e);
+    }
+    console.log('Bài 28');
+    await (0, LAB2_1.batchProcess)();
+    console.log('Bài 29');
+    await (0, LAB2_1.queueProcess)();
+    console.log('Bài 30');
+    await (0, LAB2_1.fetchMultipleAPIs)();
+}
+main();
